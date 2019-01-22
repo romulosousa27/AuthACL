@@ -20,7 +20,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
         <div class="navbar-header"> 
-            <a href="#" class="navbar-brand">Registro de Usuários</a> 
+            <a href="{{ route('home') }}" class="navbar-brand">Registro de Usuários</a> 
         </div>
         <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
