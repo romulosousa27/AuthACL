@@ -22,6 +22,12 @@ class UserController extends Controller {
         return view('home');
     }
 
+    public function list() {
+
+        $users = $this->user->all();
+
+        return view('users.list', compact('users'));
+    }
 
     /**
      * Retornando a view para formulario de cadastro
