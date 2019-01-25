@@ -29,6 +29,13 @@ class UserController extends Controller {
         return view('users.list', compact('users'));
     }
 
+    public function edit($id) {
+        
+        $user = $this->user->find($id);
+         
+        return view('users.edit', compact('user'));
+    }
+
     /**
      * Retornando a view para formulario de cadastro
      *
