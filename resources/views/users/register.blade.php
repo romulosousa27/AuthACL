@@ -28,6 +28,15 @@
             </div>
         </div>
         <div class="form-group">
+            <label for="cargo" class="col-sm-2 control-label">Cargo</label>
+            <div class="col-sm-10">
+            <select class="form-control" name="permission">
+                <option value="Atendente">Atendente</option>
+                <option value="Gerente">Gerente</option>
+            </select>
+            </div>
+        </div>
+        <div class="form-group">
             <label for="password" class="col-sm-2 control-label">Senha</label>
             <div class="col-sm-10">
                 <input type="password" class="form-control" name="password" placeholder="Digite sua senha">
