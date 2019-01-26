@@ -3,7 +3,7 @@
 @section('content')
 <div class="panel-heading"><h3>Editar perfil</h3></div>
     <div class="panel-body">
-        <form class="form-horizontal" method="post" action="#">
+    <form class="form-horizontal" method="post" action="{{ route ('update', $user->id) }}">
         {{ csrf_field() }}
         <div class="form-group">
             <label for="name" class="col-sm-2 control-label">Nome</label>
@@ -25,7 +25,7 @@
             </div>
         </div>
         <div class="form-group">
-            <label for="cargo" class="col-sm-2 control-label">Cargo</label>
+            <label for="permission" class="col-sm-2 control-label">Cargo</label>
             <div class="col-sm-10">
             <select class="form-control" name="permission">
                 <option {{ $user->permission == 'Atendente' ? 'selected' : ''}}>Atendente</option>
@@ -42,7 +42,7 @@
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-10">
                 <button type="reset" class="btn btn-default">Cancelar</button>
-                <button type="submit" class="btn btn-primary">Registrar</button>
+                <button type="submit" class="btn btn-primary">Atualizar</button>
             </div>
         </div>
         </form>
