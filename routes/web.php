@@ -28,5 +28,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', 'AuthenticateController@dashboard')->name('dashboard');
     Route::get('/dashboard/users', 'UserController@list')->name('list');
     Route::get('/dashboard/users/{id}/edit', 'UserController@edit')->name('edit');
+    Route::post('/dashboard/users/{id}/update', 'UserController@update')->name('update');
 });
 
