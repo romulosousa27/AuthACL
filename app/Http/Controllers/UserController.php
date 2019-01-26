@@ -31,9 +31,36 @@ class UserController extends Controller {
 
     public function edit($id) {
         
+        // Verificando permissão
+        $this->authorize('update', $this->user);
+
         $user = $this->user->find($id);
          
         return view('users.edit', compact('user'));
+    }
+
+    public function update(Request $request, $id) {
+        
+        // Verificando permissão
+        $this->authorize('update', $this->user);
+        
+        $data = $request->all();
+        
+        $user = $this->user->find($id);
+        
+        // Verificação de Senha
+        if(!$data['password']) {
+            $old = $user->password;
+            $data['senha'] = $old;
+            $user->update($data);
+        }
+        else{
+            $new = bcrypt($data['password']);
+            $data['password'] = $new;
+            $user->update($data);
+        }
+      
+        return redirect()->route('list');
     }
 
     /**
